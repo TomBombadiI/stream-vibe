@@ -79,7 +79,8 @@ export default defineConfig({
             scss: {
                 additionalData: `
                     @use '@/styles/helpers' as *;
-                `
+                `,
+                silenceDeprecations: ['legacy-js-api']
             },
             less: {},
             stylus: {},
