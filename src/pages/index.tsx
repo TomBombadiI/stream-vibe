@@ -1,4 +1,5 @@
-import { Head } from "minista"
+import { Head } from "minista";
+import '@/styles';
 
 export default function () {
   return (
