@@ -1,5 +1,6 @@
-import { defineConfig } from "minista"
+import { defineConfig } from "minista";
 import path from 'path';
+import webfontDownload from 'vite-plugin-webfont-dl';
 
 export default defineConfig({
     root: "",
@@ -138,5 +139,10 @@ export default defineConfig({
             indent_size: 2,
         },
     },
-    vite: {},
+    vite: {
+        plugins: [
+            webfontDownload(),
+        ]
+    },
+
 })
