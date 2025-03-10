@@ -1,3 +1,4 @@
+import Button from '@/components/Button';
 import './Header.scss';
 import Logo from '@/components/Logo';
 import classNames from 'classnames';
@@ -52,6 +53,22 @@ const Header = (props: any) => {
                         ))}
                     </ul>
                 </nav>
+                <div className="header__actions">
+                    <Button
+                        className="header__button"
+                        label="Search"
+                        mode="transparent"
+                        isLabelVisible={false}
+                        iconName="search"
+                    />
+                    <Button
+                        className="header__button"
+                        label="Notification"
+                        mode="transparent"
+                        isLabelVisible={false}
+                        iconName="notification"
+                    />
+                </div>
             </div>
         </header>
     )
