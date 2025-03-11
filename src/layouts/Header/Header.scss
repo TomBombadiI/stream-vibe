@@ -38,12 +38,30 @@
         justify-content: flex-end;
         row-gap: 16px;
 
+        transition-duration: var(--transition-duration);
+        transition-behavior: allow-discrete;
+
         @include tablet-above {
             display: contents;
         }
 
-        &[open] {
-            display: flex;
+        @mixin starting-style {
+            opacity: 0;
+            translate: 50%;
+        }
+
+        @include tablet {
+            &[open] {
+                display: flex;
+
+                @starting-style {
+                    @include starting-style;
+                }
+            }
+
+            &:not([open]) {
+                @include starting-style;
+            }
         }
     }
 
