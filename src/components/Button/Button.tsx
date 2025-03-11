@@ -7,11 +7,12 @@ type ButtonProps = {
     type?: 'button' | 'submit' | 'reset';
     href?: string;
     target?: string;
-    mode?: '' | 'transparent';
+    mode?: '' | 'transparent' | 'black10';
     label: string;
     isLabelVisible?: boolean;
     iconName?: string;
     iconPosition?: 'before' | 'after';
+    hasFillIcon?: boolean,
 }
 
 const Button = (props: any) => {
@@ -24,7 +25,8 @@ const Button = (props: any) => {
         label,
         isLabelVisible = true,
         iconName,
-        iconPosition = 'before'
+        iconPosition = 'before',
+        hasFillIcon
     } = props;
 
     const isLink: boolean = href !== undefined;
@@ -39,6 +41,7 @@ const Button = (props: any) => {
         <Icon
             className='button__icon'
             name={iconName}
+            hasFill={hasFillIcon}
         />
     );
 
