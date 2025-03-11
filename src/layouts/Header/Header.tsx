@@ -2,6 +2,7 @@ import Button from '@/components/Button';
 import './Header.scss';
 import Logo from '@/components/Logo';
 import classNames from 'classnames';
+import BurgerButton from '@/components/BurgerButton';
 
 const Header = (props: any) => {
     const {
@@ -69,6 +70,9 @@ const Header = (props: any) => {
                         iconName="notification"
                     />
                 </div>
+                <BurgerButton 
+                    className="header__burger-button"
+                />
             </div>
         </header>
     )
