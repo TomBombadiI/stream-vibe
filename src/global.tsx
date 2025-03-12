@@ -9,6 +9,7 @@ export default function (props: any) {
         title,
         children,
         url,
+        isHeaderFixed
     } = props
 
     return (
@@ -27,7 +28,7 @@ export default function (props: any) {
 
                 <script src="/src/main.js" type="module" />
             </Head>
-            <Header url={url} />
+            <Header url={url} isFixed={isHeaderFixed} />
             <Content>
                 {children}
             </Content>
