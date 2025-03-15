@@ -1,6 +1,8 @@
 import Section from '@/layouts/Section';
 import './Categories.scss';
 import CategoryCard from '@/components/CategoryCard';
+import Slider from '@/components/Slider';
+import SliderNavigation from '@/components/Slider/components/SliderNavigation';
 
 const Categories = () => {
     const categoryItems = [
@@ -51,25 +53,31 @@ const Categories = () => {
         },
     ];
 
+    const sliderNavigationId = 'categories-slider-navigation';
+
     return (
         <Section
             title="Explore our wide variety of categories"
             titleId="categories-title"
             description="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new"
             actions={(
-                <div>
-                    <button>Назад</button>
-                    <button>Вперед</button>
-                </div>
+                <SliderNavigation
+                    mode='tile'
+                    id={sliderNavigationId}
+                />
             )}
             isActionsVisibleOnMobile={false}
         >
-            {categoryItems.map((categoryItem, index) => (
-                <CategoryCard 
-                    {...categoryItem}
-                    key={index}
-                />
-            ))}
+            <Slider
+                navigationTargetElementId={sliderNavigationId}
+            >
+                {categoryItems.map((categoryItem, index) => (
+                    <CategoryCard
+                        {...categoryItem}
+                        key={index}
+                    />
+                ))}
+            </Slider>
         </Section>
     )
 }
