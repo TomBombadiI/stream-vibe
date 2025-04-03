@@ -7,7 +7,7 @@ type ButtonProps = {
     type?: 'button' | 'submit' | 'reset';
     href?: string;
     target?: string;
-    mode?: '' | 'transparent' | 'black10';
+    mode?: '' | 'transparent' | 'black10' | 'black08';
     label: string;
     isLabelVisible?: boolean;
     iconName?: string;

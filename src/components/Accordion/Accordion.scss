@@ -53,7 +53,7 @@
             height: 2.5px;
             background-color: var(--color-white);
             border-radius: 10px;
-            transition-duration: var(--transition-duration);
+            transition-duration: var(--transition-duration-longer);
 
             @include laptop {
                 height: 2px;
