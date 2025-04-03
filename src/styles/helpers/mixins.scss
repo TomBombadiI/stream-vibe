@@ -43,8 +43,7 @@
 
 @mixin abs-center-y() {
     position: absolute;
-    top: -50%;
-    left: 0;
+    top: 50%;
     translate: 0 -50%;
 }
 
