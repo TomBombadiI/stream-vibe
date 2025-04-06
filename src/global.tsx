@@ -3,6 +3,7 @@ import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
 import Content from "@/layouts/Content";
 import '@/styles';
+import Banner from "./sections/Banner";
 
 export default function (props: any) {
     const {
@@ -29,8 +30,9 @@ export default function (props: any) {
                 <script src="/src/main.js" type="module" />
             </Head>
             <Header url={url} isFixed={isHeaderFixed} />
-            <Content>
+            <Content isResetPaddingTop={isHeaderFixed}>
                 {children}
+                <Banner />
             </Content>
             <Footer />
         </>
