@@ -1,9 +1,10 @@
 import getParams from "@/utils/getParams";
 import pxToRem from "@/utils/pxToRem";
+import BaseComponent from "./generic/BaseComponent";
 
 const rootSelector = '[data-js-tabs]';
 
-class Tabs {
+class Tabs extends BaseComponent {
   selectors = {
     root: rootSelector,
     navigation: '[data-js-tabs-navigation]',
@@ -32,6 +33,8 @@ class Tabs {
 
 
   constructor(rootElement: HTMLElement) {
+    super();
+
     this.rootElement = rootElement;
     this.params = getParams(this.rootElement, this.selectors.root);
     this.navigationElement = this.params.navigationTargetElementId
@@ -40,9 +43,9 @@ class Tabs {
 
     this.buttonElements = [...this.navigationElement.querySelectorAll<HTMLElement>(this.selectors.button)];
     this.contentElements = [...this.rootElement.querySelectorAll<HTMLElement>(this.selectors.content)];
-    this.state = {
+    this.state = this.getProxyState({
       activeTabIndex: this.buttonElements.findIndex(({ ariaSelected }) => ariaSelected)
-    }
+    })
     this.limitTabIndex = this.buttonElements.length - 1;
 
     this.bindEvents();
@@ -68,7 +71,7 @@ class Tabs {
       const isActive = index === activeTabIndex;
 
       contentElement.classList.toggle(this.stateClasses.isActive, isActive);
-    })
+    });
   }
 
   updateNavigationCSSVariables = (
@@ -90,7 +93,6 @@ class Tabs {
 
   activateTab = (newTabIndex: number) => {
     this.state.activeTabIndex = newTabIndex;
-    this.updateUI();
     this.buttonElements[newTabIndex].focus();
   }
 
