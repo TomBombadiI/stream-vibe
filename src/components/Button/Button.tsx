@@ -7,7 +7,7 @@ type ButtonProps = {
     type?: 'button' | 'submit' | 'reset';
     href?: string;
     target?: string;
-    mode?: '' | 'transparent' | 'black10' | 'black08';
+    mode?: '' | 'transparent' | 'black10' | 'black08' | 'black06';
     label: string;
     isLabelVisible?: boolean;
     iconName?: string;
@@ -16,7 +16,7 @@ type ButtonProps = {
     extraAttrs?: any,
 }
 
-const Button = (props: any) => {
+const Button = (props: ButtonProps) => {
     const {
         className,
         type = 'button',

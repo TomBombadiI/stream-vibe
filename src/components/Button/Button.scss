@@ -49,9 +49,14 @@
         }
     }
 
+    &--black06,
     &--black08,
     &--black10 {
         border: var(--border);
+    }
+
+    &--black06 {
+        background-color: var(--color-black-06);
     }
 
     &--black08 {
