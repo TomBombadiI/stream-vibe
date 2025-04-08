@@ -7,7 +7,7 @@ type SliderNavigationProps = {
     id?: string,
     hasPagination?: false,
     mode?: '' | 'tile',
-    position: '' | 'abs-bottom',
+    position?: '' | 'abs-bottom',
     isHiddenMobile?: boolean,
 }
 

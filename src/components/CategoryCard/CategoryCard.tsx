@@ -1,11 +1,13 @@
 import { Image } from 'minista';
 import './CategoryCard.scss';
 import Icon from '../Icon';
+import Badge from '../Badge';
 
 const CategoryCard = (props: any) => {
     const {
         title,
         images = [],
+        badge,
     } = props;
 
     return (
@@ -21,7 +23,16 @@ const CategoryCard = (props: any) => {
             </div>
             <div className="category-card__body">
                 <h3 className="category-card__title">
-                    {title}
+                    {badge && (
+                        <Badge
+                            className='category-card__badge'
+                            mode='accent'
+                            isBig
+                        >
+                            {badge}
+                        </Badge>
+                    )}
+                    <span>{title}</span>
                 </h3>
                 <Icon
                     className="category-card__icon"

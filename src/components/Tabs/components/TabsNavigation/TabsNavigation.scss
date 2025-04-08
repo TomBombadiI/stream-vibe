@@ -3,7 +3,7 @@
   --tabsNavigationActiveButtonOffsetLeft: 0;
   --tabsNavigationPadding: #{fluid-to-laptop(10, 8)};
 
-  display: flex;
+  display: var(--tabsNavigationDisplay, flex);
   padding: var(--tabsNavigationPadding);
   border: var(--border);
   border-radius: var(--border-radius-m);
