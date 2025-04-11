@@ -38,18 +38,27 @@ const defaultSliderParams = {
     }
 };
 
-const Slider = (props: any) => {
+type SliderProps = {
+    children?: any,
+    navigationTargetElementId?: string,
+    sliderParams?: any,
+    isBeyondTheViewportOnMobileS?: boolean,
+    hasScrollbarOnMobile?: boolean,
+    navigationPosition?: '' | 'abs-bottom',
+    isNavigationHiddenMobile?: boolean,
+    navigationMode?: '' | 'tile' | 'rounded',
+}
+
+const Slider = (props: SliderProps) => {
     const {
         children,
         navigationTargetElementId = null,
         sliderParams = defaultSliderParams,
         isBeyondTheViewportOnMobileS,
         hasScrollbarOnMobile = true,
-        /**
-         * '' (default) | 'abs-bottom
-         */
         navigationPosition = '',
         isNavigationHiddenMobile = true,
+        navigationMode = "",
     } = props;
 
     return (
@@ -71,6 +80,7 @@ const Slider = (props: any) => {
 
             {!navigationTargetElementId && (
                 <SliderNavigation
+                    mode={navigationMode}
                     className='slider__navigation'
                     position={navigationPosition}
                     isHiddenMobile={isNavigationHiddenMobile}
