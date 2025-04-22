@@ -2,7 +2,14 @@ import './Icon.scss';
 import classNames from 'classnames';
 import { Icon as MinistaIcon } from 'minista';
 
-const Icon = (props: any) => {
+type IconProps = {
+    className?: string,
+    name?: string,
+    hasFill?: boolean,
+    ariaLabel?: string,
+}
+
+const Icon = (props: IconProps) => {
     const {
         className,
         name,
