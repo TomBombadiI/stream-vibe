@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import './AccordionGroup.scss';
 
 type AccordionGroupProps = {
+  className?: string,
   mode?: 'dark',
   columns?: number,
   children: any,
@@ -10,6 +11,7 @@ type AccordionGroupProps = {
 
 const AccordionGroup = (props: AccordionGroupProps) => {
   const {
+    className,
     mode = null,
     columns = 1,
     children,
@@ -21,7 +23,7 @@ const AccordionGroup = (props: AccordionGroupProps) => {
 
   return (
     <ListTag
-      className={classNames('accordion-group', {
+      className={classNames(className, 'accordion-group', {
         [`accordion-group--${columns}-columns`]: columns > 1,
         'accordion-group--has-counter': isOrderedList,
         [`accordion-group--${mode}`]: mode,
