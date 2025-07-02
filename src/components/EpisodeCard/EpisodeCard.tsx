@@ -28,18 +28,21 @@ const EpisodeCard = (props: EpisodeCardProps) => {
       <div className="episode-card__number">
         {number}
       </div>
-      <div className="episode-card__player">
+      <div className="episode-card__player" data-js-video-player="">
         <video
           src={video.src}
           poster={video.poster}
           className="episode-card__video"
           width={172}
           height={118}
+          data-js-video-player-video=""
         />
         <button
           className="episode-card__play-button is-active"
+          type="button"
           aria-label={playButtonLabel}
           title={playButtonLabel}
+          data-js-video-player-play-button=""
         >
           <Icon name='play-circle' />
         </button>
