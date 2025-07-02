@@ -9,7 +9,8 @@ type FieldProps = {
   type?: 'text' | 'email' | 'textarea',
   placeholder?: string,
   isRequired?: boolean,
-  inputMode?: "text" | "email" | "search" | "tel" | "none" | "url" | "numeric" | "decimal"
+  inputMode?: "text" | "email" | "search" | "tel" | "none" | "url" | "numeric" | "decimal",
+  mask?: string
 }
 
 const Field = (props: FieldProps) => {
@@ -20,10 +21,17 @@ const Field = (props: FieldProps) => {
     type = 'text',
     placeholder,
     isRequired = false,
-    inputMode
+    inputMode,
+    mask
   } = props;
 
   const Component = type === 'textarea' ? 'textarea' : 'input';
+
+  const extraAttrs = {};
+
+  if (mask) {
+    extraAttrs['data-js-input-mask'] = mask;
+  }
 
   return (
     <div
@@ -47,6 +55,7 @@ const Field = (props: FieldProps) => {
           placeholder={placeholder}
           required={isRequired}
           inputMode={inputMode}
+          {...extraAttrs}
         />
       </div>
     </div>
