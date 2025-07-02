@@ -1,10 +1,4 @@
-class BaseComponent {
-  constructor() {
-    if (this.constructor === BaseComponent) {
-      throw new Error('Невозможно создать экземпляр абстрактного класса BaseComponent!');
-    }
-  }
-
+abstract class BaseComponent {
   getProxyState = (initialState: any) => {
     return new Proxy(initialState, {
       get: (target, prop) => {
@@ -19,7 +13,7 @@ class BaseComponent {
           this.updateUI();
         }
 
-        return newValue !== oldValue;
+        return true;
       }
     });
   }
@@ -27,9 +21,7 @@ class BaseComponent {
   /** 
    * Перерисовка UI в ответ на обновление состояния
    */
-  updateUI = (): void => {
-    throw new Error('Необходимо реализовать метод UI');
-  }
+  abstract updateUI(): void
 }
 
 export default BaseComponent;
