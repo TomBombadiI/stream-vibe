@@ -12,6 +12,7 @@
   }
 
   &__input {
+    cursor: pointer;
     appearance: none;
 
     @include flex-center;

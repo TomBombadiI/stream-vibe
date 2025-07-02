@@ -10,7 +10,8 @@ type FieldProps = {
   placeholder?: string,
   isRequired?: boolean,
   inputMode?: "text" | "email" | "search" | "tel" | "none" | "url" | "numeric" | "decimal",
-  mask?: string
+  mask?: string,
+  renderBefore?: (className: string) => JSX.Element
 }
 
 const Field = (props: FieldProps) => {
@@ -22,7 +23,8 @@ const Field = (props: FieldProps) => {
     placeholder,
     isRequired = false,
     inputMode,
-    mask
+    mask,
+    renderBefore
   } = props;
 
   const Component = type === 'textarea' ? 'textarea' : 'input';
@@ -48,6 +50,7 @@ const Field = (props: FieldProps) => {
         )}
       </label>
       <div className="field__body">
+        {renderBefore?.('field__control')}
         <Component
           className='field__control'
           id={id}
