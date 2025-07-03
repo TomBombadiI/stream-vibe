@@ -1,6 +1,8 @@
 import RatingView from '../RatingView';
 import './Ratings.scss';
 
+
+
 type RatingsItem = {
   title: string,
   ratingValue: number,

@@ -47,6 +47,7 @@ type SliderProps = {
     navigationPosition?: '' | 'abs-bottom',
     isNavigationHiddenMobile?: boolean,
     navigationMode?: '' | 'tile' | 'rounded',
+    navigationJustifyContent?: 'space-between' | 'center',
 }
 
 const Slider = (props: SliderProps) => {
@@ -59,6 +60,7 @@ const Slider = (props: SliderProps) => {
         navigationPosition = '',
         isNavigationHiddenMobile = true,
         navigationMode = "",
+        navigationJustifyContent
     } = props;
 
     return (
@@ -84,6 +86,7 @@ const Slider = (props: SliderProps) => {
                     className='slider__navigation'
                     position={navigationPosition}
                     isHiddenMobile={isNavigationHiddenMobile}
+                    justifyContent={navigationJustifyContent}
                 />
             )}
 

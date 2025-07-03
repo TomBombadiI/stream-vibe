@@ -9,7 +9,8 @@ type SliderNavigationProps = {
     mode?: '' | 'tile' | 'rounded',
     position?: '' | 'abs-bottom',
     isHiddenMobile?: boolean,
-    buttonMode?: 'black10' | 'black08'
+    buttonMode?: 'black10' | 'black08',
+    justifyContent?: 'space-between' | 'center'
 }
 
 const SliderNavigation = (props: SliderNavigationProps) => {
@@ -20,7 +21,8 @@ const SliderNavigation = (props: SliderNavigationProps) => {
         mode = '',
         position = '',
         isHiddenMobile = false,
-        buttonMode = 'black10'
+        buttonMode = 'black10',
+        justifyContent
     } = props;
 
     return (
@@ -29,6 +31,7 @@ const SliderNavigation = (props: SliderNavigationProps) => {
                 [`slider-navigation--${mode}`]: mode,
                 [`slider-navigation--${position}`]: position,
                 ['hidden-mobile']: isHiddenMobile,
+                [`slider-navigation--${justifyContent}`]: justifyContent
             })}
             id={id}
             data-js-slider-navigation=""

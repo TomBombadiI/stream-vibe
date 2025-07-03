@@ -1,5 +1,5 @@
 .select {
-  --selectButtonArrowIconUrl: url("../../assets/images/select/arrow-down_gray.svg");
+  --selectButtonArrowIconUrl: url("@/assets/images/select/arrow-down_gray.svg");
   --selectButtonArrowIconSize: #{fluid-to-laptop(24, 20)};
   --selectButtonGapX: #{fluid-to-laptop(6, 4)};
   --selectButtonPaddingX: #{fluid-to-laptop(12, 8)};
@@ -8,7 +8,7 @@
 
   &__original-control,
   &__button {
-    min-width: 94px;
+    min-width: 75px;
   }
 
   &__original-control {

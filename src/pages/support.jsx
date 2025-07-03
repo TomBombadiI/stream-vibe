@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Support Page'
 }
 
-export default function () {
+export default () => {
   return (
     <>
       <Support />

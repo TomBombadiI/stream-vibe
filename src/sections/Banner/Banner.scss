@@ -17,7 +17,7 @@
         rgba(34, 14, 14, 0.91) 46.72%,
         rgba(229, 0, 0, 0) 168.98%
       ),
-      url("../../assets/images/banner/bg.png") center/cover no-repeat;
+      url("@/assets/images/banner/bg.png") center/cover no-repeat;
 
     @include tablet {
       flex-direction: column;
@@ -25,15 +25,19 @@
       text-align: center;
     }
 
-    @include mobile {
+    @include mobile-s {
       background:
         linear-gradient(180deg, rgb(0 0 0 / 88%) 26.72%, rgb(205 21 21 / 50%) 100%),
-        url("../../assets/images/banner/bg-mobile.png") center / cover no-repeat;
+        url("@/assets/images/banner/bg-mobile.png") center / cover no-repeat;
     }
   }
 
   &__body {
     display: grid;
     row-gap: fluid-to-laptop(14, 10);
+  }
+
+  &__button {
+    flex-shrink: 0;
   }
 }

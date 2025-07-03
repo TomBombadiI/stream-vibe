@@ -3,7 +3,7 @@
   gap: fluid-to-laptop(80, 50);
   padding-block: var(--section-padding-y);
 
-  @include mobile-above {
+  @include tablet-above {
     grid-template-columns: 33.5% 1fr;
   }
 
@@ -20,7 +20,7 @@
   &__image {
     width: 100%;
     background-color: var(--color-black-06);
-    border: var(--border-width-xl) solid var(--color-black-15);
+    outline: var(--border-width-xl) solid var(--color-black-15);
     border-radius: var(--border-radius-xs);
 
     @include laptop {
@@ -41,7 +41,7 @@
       border-radius: var(--border-radius-m);
     }
 
-    @include mobile-s-above {
+    @include mobile-above {
       grid-template-columns: repeat(2, 1fr);
     }
 

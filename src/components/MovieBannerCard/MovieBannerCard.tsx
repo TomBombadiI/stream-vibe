@@ -50,7 +50,7 @@ const MovieBannerCard = (props: MovieBannerCard) => {
             className="movie-banner-card__play-button"
             iconName="play"
             label="Play now"
-            hasFillIcon={true}
+            hasFillIcon
           />
           <div className="movie-banner-card__actions">
             <Button
