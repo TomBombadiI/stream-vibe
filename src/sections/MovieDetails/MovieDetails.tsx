@@ -9,7 +9,7 @@ import Tags from '@/components/Tags';
 import Ratings from '@/components/Ratings';
 
 type MovieDetailsProps = {
-  seasons: JSX.Element,
+  seasons?: JSX.Element,
 }
 
 const MovieDetails = (props: MovieDetailsProps) => {

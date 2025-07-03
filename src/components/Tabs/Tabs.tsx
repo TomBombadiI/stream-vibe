@@ -3,6 +3,14 @@ import './Tabs.scss';
 import getTabsElementsIdsFromTitle from './utils/getTabsElementsIdsFromTitle';
 import TabsNavigation from './components/TabsNavigation';
 
+type TabsProps = {
+    className?: string;
+    title: string;
+    items: any[];
+    navigationTargetElementId?: string;
+    isEnableOnlyOnMobile?: boolean;
+};
+
 const Tabs = (props: any) => {
     const {
         className,

@@ -1,7 +1,17 @@
 import classNames from 'classnames';
 import './Section.scss';
 
-const Section = (props: any) => {
+type SectionProps = {
+    className?: string;
+    title: string;
+    titleId: string;
+    description?: string;
+    actions?: JSX.Element;
+    isActionsVisibleOnMobile?: boolean;
+    children: JSX.Element[];
+}
+
+const Section = (props: SectionProps) => {
     const {
         className,
         title,
